@@ -9,7 +9,15 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 
-app.use(cors());
+// Updated CORS
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://blogspace-group7.vercel.app'  // replace with your actual Vercel URL
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
